@@ -1,2 +1,2 @@
 # myNetwork_API
-backend servies for My_Network
+backend services for My_Network
