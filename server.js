@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const userRoute = require('./routes/userRoute');
 const postRoute = require('./routes/postRoute');
-const dbURI = process.env.REACT_APP_DB_URI || require('./config').dbURI;
+const dbURI = process.env.DB_URI || require('./config').dbURI;
 
 
 const app = express();
@@ -24,7 +24,7 @@ app.use((req,res,next) =>{
     return next();
 });
 
-mongoose.connect(dbURI,{useNewUrlParser:true})
+mongoose.connect(dbURI,{useNewUrlParser:true,useUnifiedTopology: true})
     .then(() =>console.log('MongoDB connected'))
     .catch(err => console.log('failed to connect DB',err));
 

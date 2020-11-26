@@ -66,7 +66,7 @@ router.post('/login',async(req,res) =>{
                         email:user.email,
                         userId:user._id
                     },
-                    process.env.REACT_APP_JWT_KEY || require('../config').jwtKey,
+                    process.env.JWT_KEY || require('../config').jwtKey,
                     {
                         expiresIn: '1h'
                     }
